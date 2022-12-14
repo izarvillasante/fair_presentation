@@ -40,6 +40,7 @@ jobs:
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/render@v2
         with:
+          path: press.qmd
           # path: press.qmd
             # to: html
             target: gh-pages
