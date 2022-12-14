@@ -34,10 +34,15 @@ jobs:
           packages: |
             any::rmarkdown
       - uses: r-lib/actions/setup-renv@v2    
+      - name: Render with quarto:
+        run: |
+          quarto install extension quarto-ext/fontawesome --no-prompt
           
       - name: Publish to GitHub Pages (and render)
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
+         uses: quarto-dev/quarto-actions/render@v2
+         with:
+            path: press.qmd
+            # to: html
+            target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
