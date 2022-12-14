@@ -4,17 +4,22 @@ subtitle: "Bioinformatic talks 14/12/2022"
 author: "Izar de Villasante"
 format:
   revealjs: 
+    embed-resources: true
     slide-number: true
     width: 1920
     height: 1080
     smaller: true
-    chalkboard: 
-      buttons: false
+
     preview-links: auto
-    
     css: styles.css
     # footer: <https://quarto.org>
+editor: 
+  markdown: 
+    wrap: 72
+    
+
 ---
+
 ```{r setup, include=FALSE}
 library(fontawesome)
 library(tidyverse)
@@ -24,159 +29,182 @@ library(gtExtras)
 library(gtsummary)
 ```
 
-## Motivation 
-
-::: {.r-fit-text  .incremental}
-
-1. Next generation notebooks 
-
-    - better integration of code plots and narrative. \
+## Motivation {auto-animate="true" auto-animate-easing="ease-in-out"}
 
 
-2. Portable workspace
+::: {.r-fit-text .incremental}
 
-    - platform independent working environment (cluster, local, remote, OS)
-    - problems with software installation on minastirith / 
+1.  Next generation notebooks
 
+    -   better integration of code plots and narrative
 
-3. Community feedback
+2.  Portable workspace
 
-    - Good opportunity to share new discoveries about remote work (both remote server & homebased work)
-    - Good opportunity to hear about other approaches
-    - Discussion with the bioinformatics community. 
-    - Inspiration for Bioinformatics Unit Workshops 
+    -   platform independent working environment (cluster, local,
+        remote, OS)
+
+    -   Avoid involving it or admins in software installation on remote
+        cluster (HPC)
+
+3.  Community feedback
+
+    -   Good opportunity to share new discoveries about remote work
+        (both remote server & homebased work)
+
+    -   Good opportunity to hear about other approaches
+
+    -   Discussion with the bioinformatics community.
+
+    -   Inspiration for Bioinformatics Unit Workshops
 :::
 
+::: {.r-hstack }
+::: {.fair-caps data-id="F" auto-animate-delay="0.1" style="background: #ff0000;"}
+:::
 
+::: {.fair-caps data-id="A" auto-animate-delay="0.1" style="background: #ffff00;"}
+:::
 
+::: {.fair-caps data-id="I" auto-animate-delay="0.2" style="background: #008000;"}
+:::
 
-## {auto-animate=true auto-animate-easing="ease-in-out" background-color="pink"    }
+::: {.fair-caps data-id="R" auto-animate-delay="0.3" style="background: skyblue;"}
+:::
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out" background-color="pink"}
 
 ::: {.r-stack style="font-family:Arial;font-size:1.75em; text-align: center;font-weight: bold;margin:0px;"}
-
 ::: {data-id="F" style="background: #ff0000; width: 600px; height: 600px; border-radius: 1200px;"}
-<div style="height:70px;line-height: 70px; ">F</div>
+::: {style="height:70px;line-height: 70px; "}
+F
+:::
 :::
 
 ::: {data-id="A" style="background: #ffff00; width: 450px; height: 450px; border-radius: 1200px;"}
-<div style="height:70px;line-height: 70px; ">A</div>
+::: {style="height:70px;line-height: 70px; "}
+A
+:::
 :::
 
 ::: {data-id="I" style="background: #008000; width: 300px; height: 300px; border-radius: 1200px;"}
-<div style="height:70px;line-height: 70px; ">I</div>
+::: {style="height:70px;line-height: 70px; "}
+I
+:::
 :::
 
 ::: {data-id="R" style="background: skyblue; width: 150px; height: 150px; border-radius: 1200px;"}
 :::
+
 ::: {data-id="bioinf" style="width: 720px; height: 250px; border-radius: 20px;"}
-<div style="height:250px;line-height: 400px; "><img src="IMG/bioinf2.svg" /></div>
-
+::: {style="height:250px;line-height: 400px; "}
+<img src="images/faiR_bioinformatics.svg"/>
 :::
-
-
+:::
+:::
 
 <!-- ::: {data-id="E" style="background: #0000ff; width: 375px; height: 50px; border-radius: 10px;"} -->
+
 <!-- ::: -->
+
 <!-- ::: {data-id="S" style="background: #4b0082; width: 375px; height: 50px; border-radius: 10px;"} -->
+
 <!-- ::: -->
+
 <!-- ::: {data-id="T" style="background: #ee82ee; width: 375px; height: 50px; border-radius: 10px;"} -->
+
 <!-- ::: -->
 :::
 
-## {auto-animate=true auto-animate-easing="ease-in-out"}
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
 
-::: {.r-hstack }
-::: {data-id="F" .fair-caps auto-animate-delay="0"  style="background: #ff0000;"}
+::: r-hstack
+::: {.fair-caps data-id="F" auto-animate-delay="0" style="background: #ff0000;"}
 F
 :::
 
-::: {data-id="A" .fair-caps auto-animate-delay="0.1"  style="background: #ffff00;"}
+::: {.fair-caps data-id="A" auto-animate-delay="0.1" style="background: #ffff00;"}
 A
 :::
 
-::: {data-id="I" .fair-caps auto-animate-delay="0.2"  style="background: #008000;"}
+::: {.fair-caps data-id="I" auto-animate-delay="0.2" style="background: #008000;"}
 I
 :::
 
-::: {data-id="R" .fair-caps auto-animate-delay="0.3"  style="background: skyblue;"}
+::: {.fair-caps data-id="R" auto-animate-delay="0.3" style="background: skyblue;"}
 R
 :::
+
 <br><br><br><br>
 :::
 
-<iframe class="stretch" data-src="fairprinciplespaper.pdf"></iframe>
+<iframe class="stretch" data-src="fairprinciplespaper.pdf">
 
-::: {.notes}
+</iframe>
+
+::: notes
 We know what is bioinformatics but what is fair
 :::
 
-## FAIR PRINCIPLES { auto-animate=true auto-animate-easing="ease-in-out"}
-:::: {.columns}
+## FAIR PRINCIPLES {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: columns
 ::: {.column width="20%"}
 ::: {.r-hstack style="text-orientation: upright;writing-mode: vertical-lr;text-align:left;"}
-::: {data-id="F"  auto-animate-delay="0"  style="text-align: left;
-  writing-mode: horizontal-tb;"}
-<span style="color:black;font-size: 1.33em;background: #ff0000;">F</span>indable <br>
-:::
-::: {data-id="A"  auto-animate-delay="0.1"  style="writing-mode: horizontal-tb;"}
-<span style="color:black;font-size: 1.33em;background: #ffff00;">A</span>ccessible <br>
+::: {data-id="F" auto-animate-delay="0" style="text-align: left;   writing-mode: horizontal-tb;"}
+[F]{style="color:black;font-size: 1.33em;background: #ff0000;"}indable
+<br>
 :::
 
-::: {data-id="I" auto-animate-delay="0.2"  style="text-orientation: mixed;
-  writing-mode: horizontal-tb;"}
-<span style="color:black;font-size: 1.33em;background: #008000;">I</span>nteroperable <br>
+::: {data-id="A" auto-animate-delay="0.1" style="writing-mode: horizontal-tb;"}
+[A]{style="color:black;font-size: 1.33em;background: #ffff00;"}ccessible
+<br>
 :::
 
-::: {data-id="R" auto-animate-delay="0.3"  style="text-orientation: sideways;
-  writing-mode: horizontal-tb;"}
-<span style="color:black;font-size: 1.33em;background: skyblue;">R</span>eusable <br>
+::: {data-id="I" auto-animate-delay="0.2" style="text-orientation: mixed;   writing-mode: horizontal-tb;"}
+[I]{style="color:black;font-size: 1.33em;background: #008000;"}nteroperable
+<br>
+:::
+
+::: {data-id="R" auto-animate-delay="0.3" style="text-orientation: sideways;   writing-mode: horizontal-tb;"}
+[R]{style="color:black;font-size: 1.33em;background: skyblue;"}eusable
+<br>
 :::
 :::
 :::
 
 ::: {.column width="5%"}
-
 :::
 
 ::: {.column width="75%"}
-
 ::: {.r-hstack style="text-orientation: upright;writing-mode: vertical-lr;text-align:left;"}
-::: { style="text-align: left;margin-top: 15px;
-  writing-mode: horizontal-tb;"}
-  Easy to find for both humans and computers. Globally unique & persistent id.
- <br>
+::: {style="text-align: left;margin-top: 15px;   writing-mode: horizontal-tb;"}
+Easy to find for both humans and computers. Globally unique & persistent
+id. <br>
 :::
 
-::: {data-id="A"  auto-animate-delay="0.1"  style="writing-mode: horizontal-tb;margin-top: 15px;text-align:left;"}
-Open as possible, closed as necessary. User authentication and authorisation.  <br>
+::: {data-id="A" auto-animate-delay="0.1" style="writing-mode: horizontal-tb;margin-top: 15px;text-align:left;"}
+Open as possible, closed as necessary. User authentication and
+authorisation. <br>
 :::
 
-::: {data-id="I" auto-animate-delay="0.2"  style="text-orientation: mixed;text-align:left;margin-top: 15px;
-  writing-mode: horizontal-tb;"}
+::: {data-id="I" auto-animate-delay="0.2" style="text-orientation: mixed;text-align:left;margin-top: 15px;   writing-mode: horizontal-tb;"}
 Can be integrated with other apps & analysis <br>
 :::
 
-::: {data-id="R" auto-animate-delay="0.3"  style="text-orientation: sideways;text-align:left;margin-top: 15px;
-  writing-mode: horizontal-tb;"}
-Documentation and settings, clear license. 
-  <br>
-
+::: {data-id="R" auto-animate-delay="0.3" style="text-orientation: sideways;text-align:left;margin-top: 15px;   writing-mode: horizontal-tb;"}
+Documentation and settings, clear license. <br>
 :::
 :::
 :::
-
-::::
+:::
 
 ::: {.fragment .fade-in}
-<span style="color: black;font-size: 1em; writing-mode: horizontal-tb;">"Fair is everybody getting what they
-need. if you want it fair start by yourself" </span>
+["Fair is everybody getting what they need. if you want it fair start by
+yourself"]{style="color: black;font-size: 1em; writing-mode: horizontal-tb;"}
 :::
 
-## {background-image=IMG/fair_toolset.png }
-
-
-
-
+##  {background-image="images/faiR_toolset.png" background-size="contain" background-repeat="no-repeat"}
 
 ## So what is Quarto? {background-color="black"}
 
@@ -194,7 +222,10 @@ need. if you want it fair start by yourself" </span>
 
 ## So what is Quarto?
 
-> Quarto is a command line interface (CLI) that renders plain text formats (`.qmd`, `.rmd`, `.md`) OR mixed formats (`.ipynb`/Jupyter notebook) into static PDF/Word/HTML reports, books, websites, presentations and more
+> Quarto is a command line interface (CLI) that renders plain text
+> formats (`.qmd`, `.rmd`, `.md`) OR mixed formats (`.ipynb`/Jupyter
+> notebook) into static PDF/Word/HTML reports, books, websites,
+> presentations and more
 
 ```{py}
 #| eval: false
@@ -228,14 +259,13 @@ idevillasante$ quarto --help
 
 ## Quarto, more than *just* `knitr`
 
- Rmarkdown document processing workflow...
-. . .
+Rmarkdown document processing workflow... . . .
 
 ![](IMG/rmd-knitr.png)
 
 ## Quarto, more than *just* `knitr`
 
-Jupyter notebooks workflow... 
+Jupyter notebooks workflow...
 
 ![](IMG/jupyter-alone.png)
 
@@ -249,20 +279,23 @@ Quarto notebooks combine dual engine ... Knitr
 
 Quarto notebooks combine dual engine ... or jupyter
 
-![](IMG/qmd-jupyter.png)
-<br>
+![](IMG/qmd-jupyter.png) <br>
 
 ## Quarto, more internals
 
--   `knitr` or `jupyter` evaluates R/Python/Julia code and returns a `.md` file along with the evaluated code
+-   `knitr` or `jupyter` evaluates R/Python/Julia code and returns a
+    `.md` file along with the evaluated code
 
 . . .
 
--   Quarto applies Lua filters + CSS/LaTeX which is then evaluated alongside the `.md` file by Pandoc and converted to a final ouput format
+-   Quarto applies Lua filters + CSS/LaTeX which is then evaluated
+    alongside the `.md` file by Pandoc and converted to a final ouput
+    format
 
 . . .
 
-Here is an example of a Lua filter that converts strong emphasis to small caps, from <https://pandoc.org/lua-filters.html>
+Here is an example of a Lua filter that converts strong emphasis to
+small caps, from <https://pandoc.org/lua-filters.html>
 
 ``` lua
 return {
@@ -276,35 +309,44 @@ return {
 
 . . .
 
-Lua filters written by R/Python/Julia developers should be interchangeable between formats - not language specific!
-
+Lua filters written by R/Python/Julia developers should be
+interchangeable between formats - not language specific!
 
 ## Comfort of your own workspace
 
 ::: r-stack
-![](https://quarto.org/docs/tools/images/rstudio-preview.png){.fragment width="1500" fig-alt="A screenshot of a Quarto document rendered inside RStudio"}
+![](https://quarto.org/docs/tools/images/rstudio-preview.png){.fragment
+width="1500"
+fig-alt="A screenshot of a Quarto document rendered inside RStudio"}
 
-![](https://quarto.org/docs/tools/images/jupyterlab-preview.png){.fragment width="1500" fig-alt="A screenshot of a Quarto document rendered inside JupyterLab"}
+![](https://quarto.org/docs/tools/images/jupyterlab-preview.png){.fragment
+width="1500"
+fig-alt="A screenshot of a Quarto document rendered inside JupyterLab"}
 
-![](https://quarto.org/docs/computations/images/python-vscode.png){.fragment width="1500" fig-alt="A screenshot of a Quarto document rendered inside VSCode"}
+![](https://quarto.org/docs/computations/images/python-vscode.png){.fragment
+width="1500"
+fig-alt="A screenshot of a Quarto document rendered inside VSCode"}
 :::
-
 
 ##  {background-image="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/rmarkdown_wizards.png" background-size="cover"}
 
-![](IMG/quarto.png){.absolute bottom="50" left="575" width="250"}
+![](images/quarto.png){.absolute bottom="50" left="575" width="250"}
 
 ## 
 
 [So what is Quarto?]{style="font-size: 100px;"}
 
-> [Quarto® is an open-source scientific and technical publishing system built on Pandoc]{style="font-size:100px;"}
+> [Quarto® is an open-source scientific and technical publishing system
+> built on Pandoc]{style="font-size:100px;"}
 
 ## So what is Quarto?
 
-> A Quarto document i.e. a `.qmd` is a plain text file, like a `.rmd`, that can be rendered to many different formats
+> A Quarto document i.e. a `.qmd` is a plain text file, like a `.rmd`,
+> that can be rendered to many different formats
 
-![](https://quarto.org/docs/get-started/hello/images/rstudio-source-visual.png){width="1200px" fig-align="center" fig-alt="A screenshot of a Visual and Source Quarto document"}
+![](https://quarto.org/docs/get-started/hello/images/rstudio-source-visual.png){width="1200px"
+fig-align="center"
+fig-alt="A screenshot of a Visual and Source Quarto document"}
 
 ## One install, "Batteries included"
 
@@ -324,7 +366,6 @@ Quarto comes **"batteries included"** straight out of the box
 
 -   Any language, *exact* same approach and syntax
 
-
 ## What to do with my existing `.Rmd` or `.ipynb`?
 
 For some of you - nothing changes! Keep using RMarkdown and Jupyter.
@@ -333,7 +374,8 @@ For some of you - nothing changes! Keep using RMarkdown and Jupyter.
 
 . . .
 
-However, most existing `.rmd` or `.ipynb` can be rendered as-is via Quarto
+However, most existing `.rmd` or `.ipynb` can be rendered as-is via
+Quarto
 
 ``` bash
 quarto render my-favorite.rmd --to html
@@ -343,7 +385,9 @@ quarto render my-favorite.rmd --to html
 
 <br>
 
-Since Jupyter notebooks can either be treated as a linear document to be re-executed or an already evaluated document there are additional options like: `--execute`
+Since Jupyter notebooks can either be treated as a linear document to be
+re-executed or an already evaluated document there are additional
+options like: `--execute`
 
 ``` bash
 quarto render my-favorite.ipynb --to html --execute
@@ -351,8 +395,8 @@ quarto render my-favorite.ipynb --to html --execute
 
 . . .
 
-Quarto comes out of the box with much better accessibility, better defaults, more options, and a much more consistent syntax.
-
+Quarto comes out of the box with much better accessibility, better
+defaults, more options, and a much more consistent syntax.
 
 ## Rendering
 
@@ -384,20 +428,27 @@ quarto_render("document.qmd") # defaults to html
 quarto_render("document.qmd", output_format = "pdf")
 ```
 
-
 <!-- ## Interactive plot -->
 
 <!-- ``` {.python code-preview="examples/executable-code-figure-size.qmd"} -->
-<!-- alt.Chart(cars).mark_point().encode( -->
-<!--     x='Horsepower', -->
-<!--     y='Miles_per_Gallon', -->
-<!--     color='Origin', -->
-<!-- ).properties( -->
-<!--     width=700, -->
-<!--     height=300 -->
-<!-- ).interactive() -->
-<!-- ``` -->
 
+<!-- alt.Chart(cars).mark_point().encode( -->
+
+<!--     x='Horsepower', -->
+
+<!--     y='Miles_per_Gallon', -->
+
+<!--     color='Origin', -->
+
+<!-- ).properties( -->
+
+<!--     width=700, -->
+
+<!--     height=300 -->
+
+<!-- ).interactive() -->
+
+<!-- ``` -->
 
 ## Summary of Quarto \> RMarkdown
 
@@ -405,59 +456,56 @@ quarto_render("document.qmd", output_format = "pdf")
 -   Features largely cross-format
 -   Better ability to integrate multiple languages in a PROJECT
 -   Evaluate native language (R in knitr, Python/Julia in Jupyter)
--   HTML slides with `revealjs` are pandoc-compatible, so RStudio Visual Editor works with them
+-   HTML slides with `revealjs` are pandoc-compatible, so RStudio Visual
+    Editor works with them
 
 ## ROCKER-project
 
 <!-- http://www2.stat.duke.edu/~cr173/Sta790_Sp19/slides/ (Lec03)-->
-::: {.r-fit-text}
 
+::: r-fit-text
 {{< fa brands docker >}} + {{< fa brands r-project >}} = https://www.rocker-project.org/
 :::
 
-> The rocker project provides a collection of containers suited for different needs. find a base image to extend or images with popular software and optimized libraries pre-installed. Get the latest version or a reproducibly fixed environment.
+> The rocker project provides a collection of containers suited for
+> different needs. find a base image to extend or images with popular
+> software and optimized libraries pre-installed. Get the latest version
+> or a reproducibly fixed environment.
 
-:::: {.columns}
+::: columns
 ::: {.column width="33%"}
-
-  ![](IMG/rocker_base.svg)
-
-
+![](imagesrocker_base.svg)
 :::
+
 ::: {.column width="33%"}
-r
-  ![](IMG/rocker_versioned.png)
-
-
-
+r ![](images/rocker_versioned.png)
 :::
-::::
+:::
 
-## Rocker versioned{background-image=IMG/rocker_project.svg}
-
+## Rocker versioned {background-image="images/rocker_project.svg"}
 
 ## Custom rocker image
 
-:::{.r-fit-text .incremental}
-- You can customize your rocker image using a Dockerfile
+::: {.r-fit-text .incremental}
+-   You can customize your rocker image using a Dockerfile
 
-- Just like rocker images build one upon the other
+-   Just like rocker images build one upon the other
 
-- There are helper scripts provided by the rocker team with popular installs
+-   There are helper scripts provided by the rocker team with popular
+    installs
 
-- You can add any tools that you can install with command line
+-   You can add any tools that you can install with command line
 :::
 
 . . .
 
-![](IMG/rocker_images_versioned.svg)
-
+![](images/rocker_images_versioned.svg)
 
 ## Custom Dockerfile {auto-animate="true"}
 
 https://github.com/rocker-org/rocker-versioned2.git
 
-```r
+``` r
 FROM rocker/rstudio:4.0.0
 ...
 ```
@@ -466,7 +514,7 @@ FROM rocker/rstudio:4.0.0
 
 https://github.com/rocker-org/rocker-versioned2.git
 
-```r
+``` r
 FROM rocker/rstudio:4.0.0
 
 # Add tools
@@ -477,11 +525,12 @@ RUN /rocker_scripts/install_python.sh
 RUN /rocker_scripts/install_shiny_server.sh
 ...
 ```
+
 ## Custom Dockerfile {auto-animate="true"}
 
 https://github.com/rocker-org/rocker-versioned2.git
 
-```r
+``` r
 FROM rocker/rstudio:4.0.0 
 
 # Custom versions
@@ -500,11 +549,12 @@ RUN /rocker_scripts/install_python.sh
 RUN /rocker_scripts/install_shiny_server.sh
 ...
 ```
+
 ## Custom Dockerfile {auto-animate="true"}
 
 https://github.com/rocker-org/rocker-versioned2.git
 
-```r
+``` r
 FROM rocker/rstudio:4.0.0 
 
 # Custom versions
@@ -532,11 +582,12 @@ RUN apt-get update && \
     ssh-client
 ...
 ```
+
 ## Custom Dockerfile {auto-animate="true"}
 
 https://github.com/rocker-org/rocker-versioned2.git
 
-```r
+``` r
 FROM rocker/rstudio:4.0.0 
 
 # Add metadata labels
@@ -571,9 +622,10 @@ RUN apt-get update && \
     ssh-client
 ...
 ```
-## rocker + rstudio 
 
-```shell
+## rocker + rstudio
+
+``` shell
 $ docker pull rocker/rstudio
 Using default tag: latest
 latest: Pulling from rocker/rstudio
@@ -590,51 +642,41 @@ Status: Downloaded newer image for rocker/rstudio:latest
 
 . . .
 
-
-```shell
+``` shell
 $ docker run -e PASSWORD=SECRET --rm -p 8787:8787 rocker/rstudio
 ...
 ```
-. . . 
 
-::: {  style="text-align: center;"}
+. . .
+
+::: {style="text-align: center;"}
 https://localhost:8787
 :::
 
-
-
-## Rocker versioned{background-image=IMG/docker_command.PNG}
-
-
+## Rocker versioned {background-image="images/docker_command.png"}
 
 ## Github {.sequential}
 
-- Repositories: store code
-- Registry: store containers
-- Actions: CI workflows
+-   Repositories: store code
+-   Registry: store containers
+-   Actions: CI workflows
 
 <br>
 
-## Rocker versioned{background-image=IMG/faiR_workspace_1.png}
+## Rocker versioned {background-image="images/faiR_workspace_1.png"}
 
-## Rocker versioned{background-image=IMG/faiR_workspace2.png}
+## Rocker versioned {background-image="images/faiR_workspace_2.png"}
 
-## Rocker versioned{background-image=IMG/fair_workspace2_snapshots.png}
+## Rocker versioned {background-image="images/faiR_workspace_renv_snapshots.png"}
 
 ## Github Actions
 
-## {background-image=IMG/gh_actions.PNG}
+##  {background-image="IMG/gh_actions.PNG"}
 
-## {background-image=IMG/gh_actions2.PNG}
+##  {background-image="IMG/gh_actions2.PNG"}
 
-## {background-image=IMG/gh_actions3.PNG}
+##  {background-image="IMG/gh_actions3.PNG"}
 
-## Rocker versioned{background-image=IMG/faiR_workspace_CI.png}
-
-
-
-
-
-
+## Rocker versioned {background-image="IMG/faiR_workspace_CI.png"}
 
 ## The end
