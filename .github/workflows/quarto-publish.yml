@@ -33,8 +33,9 @@ jobs:
         with: 
           packages: |
             any::rmarkdown
-      - uses: r-lib/actions/setup-renv@v2    
       - name: Render with quarto:
+        uses: r-lib/actions/setup-renv@v2    
+      
         run: |
           quarto install extension quarto-ext/fontawesome --no-prompt
           
