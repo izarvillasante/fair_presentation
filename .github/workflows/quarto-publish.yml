@@ -33,16 +33,14 @@ jobs:
         with: 
           packages: |
             any::rmarkdown
-      - name: Render with quarto:
-        uses: r-lib/actions/setup-renv@v2    
       
-        run: |
-          quarto install extension quarto-ext/fontawesome --no-prompt
+      - uses: r-lib/actions/setup-renv@v2    
+      
           
       - name: Publish to GitHub Pages (and render)
-         uses: quarto-dev/quarto-actions/render@v2
-         with:
-            path: press.qmd
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          path: press.qmd
             # to: html
             target: gh-pages
         env:
