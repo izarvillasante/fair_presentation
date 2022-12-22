@@ -16,10 +16,10 @@ format:
 # editor:
 #   markdown:
 #     wrap: 72
-# resources: 
-#   - fairprinciplespaper.pdf
-#   - images/
-#     
+resources:
+  - fairprinciplespaper.pdf
+  - images/
+
 
 ---
 
