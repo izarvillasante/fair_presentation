@@ -5,6 +5,7 @@ author: "Izar de Villasante"
 format:
   revealjs: 
     embed-resources: true
+
     slide-number: true
     width: 1920
     height: 1080
@@ -12,15 +13,9 @@ format:
 
     preview-links: auto
     css: styles.css
-    # footer: <https://quarto.org>
-# editor:
-#   markdown:
-#     wrap: 72
-resources:
-  - fairprinciplespaper.pdf
-  - images/
-
-
+    
+execute: 
+  cache: false
 ---
 
 ```{r setup, include=FALSE}
@@ -30,6 +25,7 @@ library(quarto)
 library(gt)
 library(gtExtras)
 library(gtsummary)
+
 ```
 
 ## Motivation {auto-animate="true" auto-animate-easing="ease-in-out"}
@@ -106,17 +102,7 @@ I
 :::
 :::
 
-<!-- ::: {data-id="E" style="background: #0000ff; width: 375px; height: 50px; border-radius: 10px;"} -->
 
-<!-- ::: -->
-
-<!-- ::: {data-id="S" style="background: #4b0082; width: 375px; height: 50px; border-radius: 10px;"} -->
-
-<!-- ::: -->
-
-<!-- ::: {data-id="T" style="background: #ee82ee; width: 375px; height: 50px; border-radius: 10px;"} -->
-
-<!-- ::: -->
 :::
 
 ##  {auto-animate="true" auto-animate-easing="ease-in-out"}
